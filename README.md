@@ -47,5 +47,28 @@ npm install concurrently
 ~~~js
 前端页面client中添加 (脚手架安转饿了么组件)
 npm i element-ui -S
+
+main.js 引入饿了么组件
+import Vue from 'vue';
+import Element from 'element-ui';
+
+//使用element
+Vue.use(ElementUI);
+~~~
+
+~~~js
+加载动画饿了么也是提供了相应的API
+加载请求动画必定要用到axios请求 所以 还是要把axios安转一下的
+npm install axios
+~~~
+
+####	后端需要注意的事项
+
+~~~js
+获取前端表单的内容是后端需要安装(用来查询我们我们数据库的模型中的内容)
+npm install body-parser
+
+密码加密用 bcrypt
+npm install bcrypt
 ~~~
 
