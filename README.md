@@ -62,6 +62,14 @@ Vue.use(ElementUI);
 npm install axios
 ~~~
 
+~~~js
+解析token需要用到jwt-decode
+npm install jwt-decode
+const decoded=jwt-decode(需要解析的代码)
+~~~
+
+
+
 ####	后端需要注意的事项
 
 ~~~js
@@ -70,5 +78,31 @@ npm install body-parser
 
 密码加密用 bcrypt
 npm install bcrypt
+//引入bcrypt，用来密码加密
+const bcrypt = require('bcrypt');
+头像
+npm install gravatar
+const gravatar = require('gravatar');
+const avatar = gravatar.url(req.body.email, { s: '200', r: 'pg', d: 'mm' });
+
+token 的生成
+jsonwebtoken
+npm install jsonwebtoken
+var jwt=required('jsonwebtoken');
+const rule = { id: user.id, name: user.name };
+jwt.sign(rule, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+  if (err) throw err
+  res.json({
+    success: true,
+    token: "alvis" + token
+  })
+});
+~~~
+
+~~~js
+验证token 需要用到passport passport-jwt
+npm install passport passport-jwt
+
+
 ~~~
 

@@ -40,7 +40,7 @@
 </template>
 <script>
 export default {
-  name: "register ",
+  name: "register",
   components: {},
   data() {
     //验证确认密码规则
@@ -122,10 +122,18 @@ export default {
     submitForm(formName) {
       this.$refs["registerForm"].validate(valid => {
         if (valid) {
-          alert("submit");
-        } else {
-          console.log("error submit!!");
-          return false;
+          // axios 发送请求
+          this.$axios
+            .post("/api/users/register", this.registerUser)
+            .then(res => {
+              //注册成功 调用element的message方法
+              this.$message({
+                message: "账号注册成功",
+                type: "success"
+              });
+            });
+          //注册成功 路由跳转到页面
+          this.$router.push("/login");
         }
       });
     }
