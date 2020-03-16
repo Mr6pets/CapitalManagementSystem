@@ -114,9 +114,5 @@ npm install passport passport-jwt
 
 
 
-#### 打包上传 heroku
-
-~~~js
-
-~~~
+#### ps:说明线上mongoDB地址已经隐藏了，小伙伴请写上自己的mongoDB的地址
 
