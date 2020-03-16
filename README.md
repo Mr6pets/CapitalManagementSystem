@@ -112,3 +112,11 @@ npm install passport passport-jwt
 
 ~~~
 
+
+
+#### 打包上传 heroku
+
+~~~js
+
+~~~
+

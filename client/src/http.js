@@ -46,7 +46,7 @@ axios.interceptors.response.use(response => {
 }, error => {
   //错误提醒
   endLoading();//结束加载动画
-  Message.error(error, response.data);
+  Message.error(error.response.data);
   //如果响应的有错误, 状态码401那就是token失效了
   //获取错误状态码
   const { status } = error.response;
